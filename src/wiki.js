@@ -9,7 +9,8 @@ import markupParser from './wiki-markup-parser';
  * @property {string} apiUrl - URL of Wikipedia API
  */
 let defaultOptions = {
-	apiUrl: 'http://en.wikipedia.org/w/api.php'
+	apiUrlFR: 'http://fr.wikipedia.org/w/api.php',
+	apiUrlEN: 'http://en.wikipedia.org/w/api.php'
 };
 
 /**
@@ -25,7 +26,7 @@ class Wiki {
 	api(params) {
 		return new Promise((resolve, reject) => {
 			request.get({
-					uri: this.options.apiUrl,
+					uri: this.options.apiUrlFR,
 					qs: _.extend(params, {
 						format: 'json',
 						action: 'query'
